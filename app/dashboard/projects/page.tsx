@@ -1,3 +1,4 @@
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 export default async function Page() {
@@ -28,7 +29,12 @@ export default async function Page() {
             <TableCell>{user.name}</TableCell>
             <TableCell>{user.phone}</TableCell>
             <TableCell>{user.city}</TableCell>
-            <TableCell>{user.avatar}</TableCell>
+            <TableCell>
+              <Avatar>
+              <AvatarImage src={user.avatar} />
+                <AvatarFallback>&nbsp;</AvatarFallback>
+              </Avatar>
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>
